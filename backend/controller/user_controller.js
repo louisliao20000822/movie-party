@@ -1,4 +1,5 @@
 const User = require('../model/user_model');
+const bcrypt = require("bcrypt");
 
 async function  LoginUser (req,res){
     const password = req.body.password;

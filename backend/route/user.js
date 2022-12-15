@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
 const {
-    LoginUser
+    LoginUser,CreateUser
 } = require('../controller/user_controller');
 
-app.post("/login",async (req,res) => {
+router.post("/signIn",async (req,res) => {
 
     Token = await LoginUser(req,res);
     res.send(Token);
@@ -12,12 +12,13 @@ app.post("/login",async (req,res) => {
 
 });
 
-app.post("/signUp",async (req,res) => {
+router.post("/signUp",async (req,res) => {
+    console.log(req.body);
 	var ID =await CreateUser(req,res);
     res.send(ID);
 });
 
-app.get("/party/playing", async (req,res) => {
+router.get("/party/playing", async (req,res) => {
 	var state =await videoState(req,res);
     res.send(state);
 });

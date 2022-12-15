@@ -24,7 +24,7 @@ async function  LoginUser (user_name,password){
 			}
 
 		  	const token = jwt.sign(header, jwtSecretKey);
-			return(token);
+			return({result : "success"});
 			} 
 		else {
 			console.log("---------> Password Incorrect");
@@ -33,7 +33,7 @@ async function  LoginUser (user_name,password){
 	}
 }
 
-async function  CreateUser (user,user_name,hashedPassword){
+async function  CreateUser (user_name,hashedPassword){
 	const  user_nameExist  = (await mysql.query(` SELECT * FROM user WHERE user_name =  ?`
 										,[user_name]));
 	if(user_nameExist.length != 0){
@@ -41,7 +41,7 @@ async function  CreateUser (user,user_name,hashedPassword){
 	   return ("user_name already exists");
 	}								
 	else {
-		await mysql.query ("INSERT INTO userTable VALUES (0,?,?,?)", [user,user_name,hashedPassword]);
+		await mysql.query ("INSERT INTO user VALUES (0,?,?)", [user_name,hashedPassword]);
 		return ("success");
 	}
 }
