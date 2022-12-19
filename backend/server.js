@@ -3,13 +3,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-const cors = require('cors');
-app.use(cors());
 
+app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-
-app.use(cors());
 app.use(express.static('public'))
 app.use('/api/1.0',require('./route/chat'));
 app.use('/api/1.0',require('./route/movie'));
@@ -40,7 +37,7 @@ app.get('/video3',(req,res) =>{
 
 
 const server = app.listen(4000, () => {
-	console.log('The application is running on localhost:4000!')
+	console.log('The application is running on 44.235.8.206!')
 });
 
 const io = require('socket.io')(server, {
