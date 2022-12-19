@@ -6,6 +6,12 @@ const getChat = async (mId,rId) => {
     return result;
 }
 
+const getRoom = async (rId) => {
+    const result = await mysql.query('SELECT * FROM party WHERE rId = ?',[rId]);
+    return result;
+}
+
+
 const getChatMovie = async (time,mId) => {
     const result = await mysql.query('SELECT * FROM chat_movie WHERE mId = ? and time < ?',[mId, parseFloat(time)]);
     return result;
@@ -36,5 +42,6 @@ module.exports = {
     getChatMovie,
     insertChatMovie,
     insertChat,
-    createRoom
+    createRoom,
+    getRoom
 }    

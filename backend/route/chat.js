@@ -27,6 +27,12 @@ router.get('/chat/party/:mId' , async function(req, res, next){
         return result;
 });    
 
+router.get('/chat/room/:id' , async function(req, res, next){
+    
+    var result = await getRoom(req,res);
+    return result;
+});    
+
 router.post('/party/createroom' , async function(req, res, next){
     console.log(req.body);
     var result = await createRoom(req,res);

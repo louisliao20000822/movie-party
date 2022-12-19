@@ -8,6 +8,15 @@ const getChat = async (req,res) =>{
         result:result
     })
 }
+
+const getRoom = async (req,res) =>{
+    var rId = req.params.room;
+    const result = await Chat.getRoom(rId);
+    res.status(200).send({
+        result:result
+    })
+}
+
 const getChatMovie = async (req,res) =>{
     var id = req.params.mId;
     console.log(req.query.time);
@@ -64,5 +73,6 @@ module.exports = {
     getChatMovie,
     insertChatMovie,
     insertChat,
-    createRoom
+    createRoom,
+    getRoom
 };
