@@ -27,7 +27,7 @@ const Movie = () => {
     // useEffect(() => {
 
     //         const response = await axios.get(
-    //           "http://44.235.8.206/api/1.0/chat/spider-man?mId=1"
+    //           "http://localhost:4000/api/1.0/chat/spider-man?mId=1"
     //         ); 
     //         const interval = setTimeout(() => {
     //           setData(response.data.result);
@@ -41,7 +41,7 @@ const Movie = () => {
         <>
             <div className="container d-flex justify-content-center">
             <figure>
-              <video  width="1200" height="640" controls  ref={refvideo} id="video" className='movie-box' src= {`http://44.235.8.206/video${mId}`} ></video>
+              <video  width="1200" height="640" controls  ref={refvideo} id="video" className='movie-box' src= {`http://localhost:4000/video${mId}`} ></video>
 
             </figure>
 

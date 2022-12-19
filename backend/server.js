@@ -37,7 +37,7 @@ app.get('/video3',(req,res) =>{
 
 
 const server = app.listen(4000, () => {
-	console.log('The application is running on 44.235.8.206!')
+	console.log('The application is running on localhost:4000!')
 });
 
 const io = require('socket.io')(server, {

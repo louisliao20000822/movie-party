@@ -251,7 +251,7 @@ const Party = () => {
     // useEffect(() => {
 
     //         const response = await axios.get(
-    //           "http://44.235.8.206/api/1.0/chat/spider-man?mId=1"
+    //           "http://localhost:4000/api/1.0/chat/spider-man?mId=1"
     //         ); 
     //         const interval = setTimeout(() => {
     //           setData(response.data.result);

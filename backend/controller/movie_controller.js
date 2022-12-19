@@ -1,8 +1,7 @@
 const Movie = require('../model/movie_model');
 
 const getMovie = async (req,res) =>{
-    var id = req.query.mId;
-    const result = await Movie.getMovie(id);
+    const result = await Movie.getMovie();
     res.status(200).send({
         result:result
     })
